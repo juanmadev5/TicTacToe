@@ -20,6 +20,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.AlertDialog
@@ -208,7 +209,7 @@ fun TicTacToeApp() {
                                                 .wrapContentHeight()
                                         ) {
                                             Icon(
-                                                imageVector = Icons.Filled.Person,
+                                                imageVector = Icons.Filled.Favorite,
                                                 contentDescription = stringResource(R.string.love_from_paraguay)
                                             )
                                             Spacer(modifier = Modifier.padding(start = 12.dp))
