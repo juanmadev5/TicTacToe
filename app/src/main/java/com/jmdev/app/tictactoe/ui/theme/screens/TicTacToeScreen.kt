@@ -123,23 +123,23 @@ fun TicTacToeApp() {
 
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
-                            text = "Turno: ${gameViewModel.currentPlayer.value}",
+                            text = stringResource(R.string.turn) + "${gameViewModel.currentPlayer.value}",
                             color = MaterialTheme.colorScheme.onSurface
                         )
                         Spacer(modifier = Modifier.height(16.dp))
                         if (result.isNotEmpty()) {
                             Text(
                                 text = when (result) {
-                                    "X" -> "¡X ganó!"
-                                    "O" -> "¡O ganó!"
-                                    else -> "Empate"
+                                    "X" -> stringResource(R.string.x_win)
+                                    "O" -> stringResource(R.string.o_win)
+                                    else -> stringResource(R.string.tie)
                                 },
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurface
                             )
                             Spacer(modifier = Modifier.height(16.dp))
                             Button(onClick = { gameViewModel.resetGame() }) {
-                                Text(text = "Reiniciar")
+                                Text(text = stringResource(R.string.restart))
                             }
                         }
                         if (showDialog.value) {
@@ -151,9 +151,10 @@ fun TicTacToeApp() {
                                         contentDescription = "info"
                                     )
                                 },
-                                title = { Text(text = "Información de la aplicación") },
+                                title = { Text(text = stringResource(R.string.app_info)) },
                                 text = {
                                     Column(Modifier.wrapContentHeight()) {
+                                        Spacer(modifier = Modifier.padding(top = 12.dp))
                                         Row(
                                             Modifier
                                                 .fillMaxWidth()
@@ -161,7 +162,7 @@ fun TicTacToeApp() {
                                         ) {
                                             Icon(
                                                 imageVector = Icons.Filled.Build,
-                                                contentDescription = "app ver"
+                                                contentDescription = stringResource(R.string.app_ver)
                                             )
                                             Spacer(modifier = Modifier.padding(start = 12.dp))
                                             Text(text = stringResource(id = R.string.app_name) + "  v1.0")
@@ -174,10 +175,10 @@ fun TicTacToeApp() {
                                         ) {
                                             Icon(
                                                 imageVector = Icons.Filled.Person,
-                                                contentDescription = "developer"
+                                                contentDescription = stringResource(R.string.developer)
                                             )
                                             Spacer(modifier = Modifier.padding(start = 12.dp))
-                                            Text(text = "Desarrollador: JMDev")
+                                            Text(text = stringResource(R.string.dev_name))
                                         }
                                         Spacer(modifier = Modifier.padding(top = 12.dp))
                                         Row(
@@ -187,18 +188,31 @@ fun TicTacToeApp() {
                                         ) {
                                             Icon(
                                                 painter = painterResource(id = R.drawable.baseline_insert_link_24),
-                                                contentDescription = "git hub"
+                                                contentDescription = stringResource(R.string.git_hub)
                                             )
                                             Spacer(modifier = Modifier.padding(start = 12.dp))
                                             Text(
-                                                text = "Proyecto en GitHub",
+                                                text = stringResource(R.string.proyect_in_github),
                                                 modifier = Modifier.clickable {
-                                                    val url = "https://github.com/tu-proyecto"
+                                                    val url = "https://github.com/juanmadev5/TicTacToe"
                                                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                                                     startActivity(context, intent, null)
                                                 },
                                                 textDecoration = TextDecoration.Underline
                                             )
+                                        }
+                                        Spacer(modifier = Modifier.padding(top = 12.dp))
+                                        Row(
+                                            Modifier
+                                                .fillMaxWidth()
+                                                .wrapContentHeight()
+                                        ) {
+                                            Icon(
+                                                imageVector = Icons.Filled.Person,
+                                                contentDescription = stringResource(R.string.love_from_paraguay)
+                                            )
+                                            Spacer(modifier = Modifier.padding(start = 12.dp))
+                                            Text(text = stringResource(R.string.with_heart))
                                         }
                                     }
 

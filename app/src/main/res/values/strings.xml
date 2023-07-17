@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Tic tac toe</string>
+    <string name="app_name">TicTacToe</string>
+    <string name="app_icon">App icon</string>
+    <string name="turn">"Turno: "</string>
+    <string name="x_win">¡X ganó!</string>
+    <string name="o_win">¡O ganó!</string>
+    <string name="tie">Empate</string>
+    <string name="restart">Reiniciar</string>
+    <string name="app_info">Información de la aplicación</string>
+    <string name="app_ver">Version de la aplicación</string>
+    <string name="developer">Desarrollador</string>
+    <string name="dev_name">Desarrollador: JMDev</string>
+    <string name="git_hub">Enlace a proyecto en GitHub</string>
+    <string name="proyect_in_github">Proyecto en GitHub</string>
+    <string name="love_from_paraguay">Con amor desde Paraguay</string>
+    <string name="with_heart">Con  ❤️  desde Paraguay.</string>
 </resources>

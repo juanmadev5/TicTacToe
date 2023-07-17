@@ -40,7 +40,7 @@ fun AppBar(showDialog: MutableState<Boolean>) {
             IconButton(onClick = { showDialog.value = true }) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_launcher_main_foreground),
-                    contentDescription = "App icon",
+                    contentDescription = stringResource(R.string.app_icon),
                 )
             }
         }
