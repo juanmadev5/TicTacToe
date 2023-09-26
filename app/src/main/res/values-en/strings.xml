@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="app_icon">App icon</string>
+    <string name="turn">"Turn: "</string>
+    <string name="x_win">¡X win!</string>
+    <string name="o_win">¡O win!</string>
+    <string name="tie">Tie</string>
+    <string name="restart">Restart</string>
+    <string name="app_info">App info</string>
+    <string name="app_ver">App version</string>
+    <string name="developer">Developer</string>
+    <string name="dev_name">Developer: JMDev</string>
+    <string name="git_hub">Link to GitHub proyect</string>
+    <string name="proyect_in_github">Proyect in GitHub</string>
+    <string name="love_from_paraguay">With love from Paraguay</string>
+    <string name="with_heart">With ❤️ from Paraguay.</string>
+</resources>
