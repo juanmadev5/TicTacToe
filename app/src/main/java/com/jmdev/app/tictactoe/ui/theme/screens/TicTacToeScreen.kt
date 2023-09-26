@@ -124,7 +124,7 @@ fun TicTacToeApp() {
 
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
-                            text = stringResource(R.string.turn) + "${gameViewModel.currentPlayer.value}",
+                            text = stringResource(R.string.turn) + gameViewModel.currentPlayer.value,
                             color = MaterialTheme.colorScheme.onSurface
                         )
                         Spacer(modifier = Modifier.height(16.dp))
@@ -147,7 +147,7 @@ fun TicTacToeApp() {
                             AlertDialog(
                                 onDismissRequest = { showDialog.value = false },
                                 icon = {
-                                    androidx.compose.material3.Icon(
+                                    Icon(
                                         imageVector = Icons.Filled.Info,
                                         contentDescription = "info"
                                     )
@@ -195,8 +195,10 @@ fun TicTacToeApp() {
                                             Text(
                                                 text = stringResource(R.string.proyect_in_github),
                                                 modifier = Modifier.clickable {
-                                                    val url = "https://github.com/juanmadev5/TicTacToe"
-                                                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                                                    val url =
+                                                        "https://github.com/juanmadev5/TicTacToe"
+                                                    val intent =
+                                                        Intent(Intent.ACTION_VIEW, Uri.parse(url))
                                                     startActivity(context, intent, null)
                                                 },
                                                 textDecoration = TextDecoration.Underline

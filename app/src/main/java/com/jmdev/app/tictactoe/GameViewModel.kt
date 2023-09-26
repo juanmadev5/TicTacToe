@@ -4,17 +4,17 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 
 class GameViewModel : ViewModel() {
-    // Tablero de juego
+    // Game board
     private val boardSize = 3
     val board = mutableStateOf(Array(boardSize) { Array(boardSize) { "" } })
 
-    // Turno actual (X o O)
+    // Current turn (X o O)
     val currentPlayer = mutableStateOf("X")
 
-    // Resultado del juego
+    // Game result
     val result = mutableStateOf("")
 
-    // Función para realizar un movimiento
+    // Function to perform a movement
     fun makeMove(row: Int, col: Int) {
         if (board.value[row][col].isEmpty() && result.value.isEmpty()) {
             board.value[row][col] = currentPlayer.value
@@ -23,7 +23,7 @@ class GameViewModel : ViewModel() {
         }
     }
 
-    // Verificar el ganador
+    // Verify winner
     private fun checkWinner() {
         val lines = arrayOf(
             arrayOf(board.value[0][0], board.value[0][1], board.value[0][2]), // Filas
@@ -43,13 +43,13 @@ class GameViewModel : ViewModel() {
             }
         }
 
-        // Verificar empate
+        // Verify tie
         if (board.value.all { row -> row.all { cell -> cell.isNotEmpty() } }) {
             result.value = "Empate"
         }
     }
 
-    // Reiniciar el juego
+    // Restart game
     fun resetGame() {
         board.value = Array(boardSize) { Array(boardSize) { "" } }
         currentPlayer.value = "X"
