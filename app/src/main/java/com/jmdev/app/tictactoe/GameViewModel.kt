@@ -4,17 +4,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 
 class GameViewModel : ViewModel() {
-    // Game board
+
     private val boardSize = 3
+
     val board = mutableStateOf(Array(boardSize) { Array(boardSize) { "" } })
 
-    // Current turn (X o O)
     val currentPlayer = mutableStateOf("X")
 
-    // Game result
     val result = mutableStateOf("")
 
-    // Function to perform a movement
     fun makeMove(row: Int, col: Int) {
         if (board.value[row][col].isEmpty() && result.value.isEmpty()) {
             board.value[row][col] = currentPlayer.value
@@ -23,16 +21,15 @@ class GameViewModel : ViewModel() {
         }
     }
 
-    // Verify winner
     private fun checkWinner() {
         val lines = arrayOf(
-            arrayOf(board.value[0][0], board.value[0][1], board.value[0][2]), // Filas
+            arrayOf(board.value[0][0], board.value[0][1], board.value[0][2]),
             arrayOf(board.value[1][0], board.value[1][1], board.value[1][2]),
             arrayOf(board.value[2][0], board.value[2][1], board.value[2][2]),
-            arrayOf(board.value[0][0], board.value[1][0], board.value[2][0]), // Columnas
+            arrayOf(board.value[0][0], board.value[1][0], board.value[2][0]),
             arrayOf(board.value[0][1], board.value[1][1], board.value[2][1]),
             arrayOf(board.value[0][2], board.value[1][2], board.value[2][2]),
-            arrayOf(board.value[0][0], board.value[1][1], board.value[2][2]), // Diagonales
+            arrayOf(board.value[0][0], board.value[1][1], board.value[2][2]),
             arrayOf(board.value[0][2], board.value[1][1], board.value[2][0])
         )
 
@@ -43,13 +40,11 @@ class GameViewModel : ViewModel() {
             }
         }
 
-        // Verify tie
         if (board.value.all { row -> row.all { cell -> cell.isNotEmpty() } }) {
             result.value = "Empate"
         }
     }
 
-    // Restart game
     fun resetGame() {
         board.value = Array(boardSize) { Array(boardSize) { "" } }
         currentPlayer.value = "X"

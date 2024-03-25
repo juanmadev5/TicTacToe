@@ -25,7 +25,7 @@ fun AppBar(showDialog: MutableState<Boolean>) {
         modifier = Modifier
             .fillMaxWidth()
             .height(70.dp)
-            .padding(top = 16.dp)
+            .padding(8.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxSize(),

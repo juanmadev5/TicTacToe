@@ -14,11 +14,12 @@
         android:appCategory="game"
         tools:targetApi="31">
         <activity
+            android:screenOrientation="portrait"
             android:enableOnBackInvokedCallback="true"
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.TicTacToe"
-            tools:ignore="UnusedAttribute">
+            tools:ignore="DiscouragedApi,LockedOrientationActivity,UnusedAttribute">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -14,4 +14,5 @@
     <string name="proyect_in_github">Proyecto en GitHub</string>
     <string name="love_from_paraguay">Con amor desde Paraguay</string>
     <string name="with_heart">Con  ❤️  desde Paraguay.</string>
+    <string name="info_alt" translatable="false">info</string>
 </resources>
